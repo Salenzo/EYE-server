@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources=r"/*")
 
 
 @app.route("/checkout", methods=["GET"])
@@ -9,4 +11,4 @@ def checkout():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(debug=True)
